@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <button pButton pRipple type="button" [routerLink]="'/home'">
+      <i class="pi pi-home"></i>
+    </button>
+    <nav>
+      <button *ngIf="!isUserAuth" pButton pRipple type="button" label="sign in" [routerLink]="'/login'">
+      </button>
+      <button *ngIf="isUserAuth" pButton pRipple type="button" label="Main" [routerLink]="'/main'">
+      </button>
+      <button *ngIf="isUserAuth" pButton pRipple type="button" label="logout" (click)="logout()">
+      </button>
+    </nav>
+    <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
+    <div class="overlay"></div>
+  </div>
+</header>

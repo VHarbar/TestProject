@@ -1,0 +1,43 @@
+.container{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 3.2rem 8%;
+}
+.submit{
+  width: 100%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+}
+.disabled{
+  pointer-events: none;
+}
+:host{
+  ::ng-deep{
+    .p-card-footer{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .p-card{
+      height: 560px;
+    }
+  }
+}
+.anim{
+  position: absolute;
+  z-index: 99999;
+  animation-name: bounce;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transform: translate(144%, 80%);
+}
+@keyframes bounce{
+  0% {top: 0px;}
+  50% {top: 200px;}
+  100% {top: 0px;}
+}

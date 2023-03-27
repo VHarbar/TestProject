@@ -1,0 +1,18 @@
+<div class="container">
+<p-card #elem  *ngFor="let item of testObj?.tests;"
+  header=" {{ item.description }}" [style]="{ width: '360px' }">
+  <ng-template pTemplate="header">
+    <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+  </ng-template>
+  <p>
+    {{ item.questions[0].text}}
+  </p>
+  <ng-template pTemplate="footer">
+    <ng-container *ngFor="let answer of item.questions[0].answers">
+      <p-button label="{{answer.text}}" icon="pi pi-flag" (click)="chooseResult({answer, id: item.id})" [disabled]="selectedResult?.text !== answer.text"></p-button>
+    </ng-container>
+    <p-button class="submit" label="Submit result" icon="pi pi-check" [class.disabled]="!selectedResult?.text" [disabled]="!selectedResult?.text || selectedResult.id !== item?.id" (click)="submit(elem)"></p-button>
+  </ng-template>
+</p-card>
+</div>
+<img *ngIf="isShowSomeFun"  class="anim" src="https://media.tenor.com/pRTPXrxI2UAAAAAM/crying-meme-black-guy-cries.gif">
